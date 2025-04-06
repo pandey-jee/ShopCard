@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Products from './components/Products';
+import NewProduct from './components/NewProduct';
 
 const App = () => {
   const products = [
@@ -30,8 +31,15 @@ const App = () => {
   ];
 
 
+  function printProductData(data){
+
+    console.log('Product Data from child component');
+    console.log(data);
+  }
+
   return (
     <div>
+      <NewProduct printProduct = {printProductData}/>
       <Products items={products} />
     </div>
   );
